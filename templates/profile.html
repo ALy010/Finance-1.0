@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    My Profile
+{% endblock %}
+{% block main %}
+<form action="/profile" method="post">
+    <div class="mb-3">
+        <input class="form-control mx-auto w-auto" id="password" name="o-password" placeholder=" Old Password" type="password">
+    </div>
+    <div class="mb-3">
+        <input class="form-control mx-auto w-auto" id="password" name="n-password" placeholder=" New Password" type="password">
+    </div>
+    <div class="mb-3">
+        <input class="form-control mx-auto w-auto" id="confirmation" name="confirmation" placeholder="Confirm" type="password">
+    </div>
+    <button class="btn btn-primary" type="submit">Change My password</button>
+</form>
+{% endblock %}

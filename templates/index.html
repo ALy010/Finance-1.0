@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th class="text-start">Symbol</th>
+                <th class="text-end">Shares</th>
+                <th class="text-end">Price</th>
+                <th class="text-end">TOTAL</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in user_data %}
+            <tr>
+                <td class="text-start">
+                    {{ i["symbol"]}}
+                </td>
+                <td class="text-end">
+                    {{ i["shares"]}}
+                </td>
+                <td class="text-end">
+                    {{ i["price"]}}
+                </td>
+                <td class="text-end">
+                    {{ i["total"]}}
+                </td>
+                {% endfor %}
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td class="border-0 fw-bold text-end " colspan="3">Cash</td>
+                <td class="border-0  text-end">{{ db_user[0]["cash"] }}</td>
+            </tr>
+            <tr>
+                <td class="border-0 fw-bold text-end" colspan="3">TOTAL</td>
+                <td class="border-0 w-bold text-end">{{ db_user[0]["total_cash"]}}</td>
+            </tr>
+        </tfoot>
+    </table>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "layout.html" %} {% block title %} Home {% endblock %} {% block main
+%}
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th class="text-start">Symbol</th>
+      <th class="text-end">Shares</th>
+      <th class="text-end">Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for i in h_data %}
+    <tr>
+      <td class="text-start">{{ i["symbol"]}}</td>
+      <td class="text-end">{{ i["shares"]}}</td>
+      <td class="text-end">{{ i["price"]}}</td>
+      {% endfor %}
+    </tr>
+  </tbody>
+</table>
+{% endblock %}
